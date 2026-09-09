@@ -1,0 +1,129 @@
+/* css/base.css - Variables globales, reset y tipografía */
+
+:root {
+  /* COLORES CORPORATIVOS */
+  --bg-main: #ffffff;            /* Fondo general blanco roto */
+  --bg-white: #ffffff;           /* Fondo de tarjetas/paneles */
+  --text-main: #171717;          /* Negro intenso para títulos y activos */
+  --text-muted: #737373;         /* Gris para elementos inactivos */
+  --border-light: #e5e7eb;       /* Borde sutil */
+  --border-dark: #d1d5db;        /* Borde más marcado */
+  
+  /* COLORES DE UNIDADES (Saturados y Pasteles) */
+  --unit-amarilla-pastel: #FEF9C3;
+  --unit-amarilla-sat: #EAB308;
+  --unit-naranja-pastel: #FFEDD5;
+  --unit-naranja-sat: #F97316;
+  --unit-teja-pastel: #FEE2E2;
+  --unit-teja-sat: #EF4444;
+  --unit-verde-pastel: #DCFCE7;
+  --unit-verde-sat: #22C55E;
+  --unit-azul-pastel: #E0F2FE;
+  --unit-azul-sat: #0284C7;
+
+  /* ACENTOS */
+  --accent-red: #E11D48;         /* Alerta / Modificación reciente */
+  --accent-bg-gray: #f3f4f6;     /* Fondo de botones inactivos */
+
+  /* TIPOGRAFÍA Y TAMAÑOS */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --touch-min: 44px;             /* Altura mínima para elementos táctiles */
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 🔥 NUEVO: Eliminar resplandor azul en todos los elementos táctiles */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* 🔥 NUEVO: Eliminar el efecto de "brillo" al mantener pulsado en móviles */
+* {
+  -webkit-touch-callout: none !important;
+}
+
+/* 🔥 NUEVO: Pero permitir selección en inputs para que se pueda escribir */
+input, textarea, select {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+/* 🔥 NUEVO: Para botones y elementos interactivos, asegurar que no tengan outline */
+button,
+.btn,
+[role="button"],
+.tarea-card,
+.cama-card,
+.unit-header,
+.periodo-header,
+.unit-filter-btn,
+.header-tab,
+.dock-btn,
+.dock-btn-extraordinaria {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+/* Clases utilitarias de colores (para usar en componentes) */
+.bg-pastel-amarilla { background-color: var(--unit-amarilla-pastel); }
+.bg-pastel-naranja  { background-color: var(--unit-naranja-pastel); }
+.bg-pastel-teja     { background-color: var(--unit-teja-pastel); }
+.bg-pastel-verde    { background-color: var(--unit-verde-pastel); }
+.bg-pastel-azul     { background-color: var(--unit-azul-pastel); }
+
+.bg-sat-amarilla { background-color: var(--unit-amarilla-sat); }
+.bg-sat-naranja  { background-color: var(--unit-naranja-sat); }
+.bg-sat-teja     { background-color: var(--unit-teja-sat); }
+.bg-sat-verde    { background-color: var(--unit-verde-sat); }
+.bg-sat-azul     { background-color: var(--unit-azul-sat); }
+
+/* Añadido: Clase para fondos blancos de tarjetas */
+.bg-white {
+  background-color: var(--bg-white);
+}
+
+/* 🔥 NUEVO: Estilos para el vídeo de bienvenida del login */
+#video-bienvenida {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  outline: none;
+  pointer-events: none; /* No interactivo */
+  user-select: none;    /* No seleccionable */
+  -webkit-user-select: none;
+}
+
+/* 🔥 NUEVO: Contenedor del vídeo y parche para tapar la marca de agua */
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 40px;
+  background-color: #ffffff;
+  pointer-events: none; /* No interactivo, no bloquea el vídeo */
+}

@@ -1,0 +1,121 @@
+/* css/dock.css - Estilos exclusivos de los Docks (Superior e Inferior) */
+
+/* --- DOCK SUPERIOR - BOTONES DE UNIDAD --- */
+.unit-filter-btn {
+  border: 2px solid transparent;
+}
+
+.unit-filter-btn.unit-amarilla { background-color: var(--unit-amarilla-pastel); }
+.unit-filter-btn.unit-naranja  { background-color: var(--unit-naranja-pastel); }
+.unit-filter-btn.unit-teja     { background-color: var(--unit-teja-pastel); }
+.unit-filter-btn.unit-verde    { background-color: var(--unit-verde-pastel); }
+.unit-filter-btn.unit-azul     { background-color: var(--unit-azul-pastel); }
+
+.unit-filter-btn.active.unit-amarilla { background-color: var(--unit-amarilla-sat); }
+.unit-filter-btn.active.unit-naranja  { background-color: var(--unit-naranja-sat); }
+.unit-filter-btn.active.unit-teja     { background-color: var(--unit-teja-sat); }
+.unit-filter-btn.active.unit-verde    { background-color: var(--unit-verde-sat); }
+.unit-filter-btn.active.unit-azul     { background-color: var(--unit-azul-sat); }
+
+.unit-filter-btn.active.unit-amarilla { border-color: var(--unit-amarilla-sat); }
+.unit-filter-btn.active.unit-naranja  { border-color: var(--unit-naranja-sat); }
+.unit-filter-btn.active.unit-teja     { border-color: var(--unit-teja-sat); }
+.unit-filter-btn.active.unit-verde    { border-color: var(--unit-verde-sat); }
+.unit-filter-btn.active.unit-azul     { border-color: var(--unit-azul-sat); }
+
+/* --- DOCK INFERIOR --- */
+.dock-stats .stat-main { font-weight: 700; color: var(--text-muted); }
+.dock-stats .stat-details { color: var(--text-muted); font-size: 0.8rem; margin-left: 0.25rem; }
+
+.dock-btn {
+  min-width: 48px; min-height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: transparent; border: none; border-radius: 0px; padding: 0; cursor: pointer;
+  color: var(--text-muted); transition: background-color 0.15s ease; position: relative;
+}
+.dock-btn:active { background-color: var(--accent-bg-gray); }
+.dock-btn img {
+  display: block;
+  filter: none; /* Eliminado el filtro que atenuaba los iconos */
+}
+.dock-btn:hover img, .dock-btn:active img { filter: none; }
+.dock-btn.has-filter::after {
+  content: ''; position: absolute; top: 8px; right: 8px;
+  width: 8px; height: 8px; background-color: var(--accent-red); border-radius: 50%;
+}
+
+/* --- BOTÓN CENTRAL "+" (Vista por Períodos) - AHORA EN NEGRO OFICIAL --- */
+.dock-btn-extraordinaria {
+  width: clamp(40px, 10vw, 56px);
+  height: clamp(40px, 10vw, 56px);
+  background: transparent;
+  border: none;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.dock-btn-extraordinaria:hover {
+  opacity: 0.7;
+}
+
+.btn-icon-plus {
+  font-size: 2.5rem; /* Tamaño grande */
+  color: var(--text-main); /* Negro oficial (#171717) */
+  line-height: 1;
+  display: block;
+}
+
+/* --- SELECTOR DE VISTA (Dropdown) --- */
+.view-selector-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--accent-bg-gray);
+  border: 1px solid var(--border-dark);
+  border-radius: 0px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.view-selector-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+}
+
+.view-selector-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: min(180px, 80vw);
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-dark);
+  border-radius: 0px;
+  box-shadow: none;
+  overflow: hidden;
+  z-index: 1010;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: 0px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.dropdown-item.active {
+  font-weight: 700;
+  background-color: var(--accent-bg-gray);
+}

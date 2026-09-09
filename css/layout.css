@@ -1,0 +1,152 @@
+/* css/layout.css */
+
+/* ============================
+   DOCK SUPERIOR (ALTURA = 2/5 DEL ANCHO)
+   ============================ */
+
+:root {
+  /* Igual que 40vw en cualquier móvil real (320px-475px de ancho).
+     Por debajo de 120px o por encima de 190px (plegables desplegados,
+     tablets pequeñas, split-screen) la altura deja de crecer/encogerse
+     con el ancho para no deformar la barra en pantallas no previstas. */
+  --header-height: clamp(120px, 40vw, 190px);
+}
+
+.top-nav-dock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: #ffffff;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* FILA 1: Pestañas de navegación (Alto = 20% del ancho de pantalla, o sea 1/5) */
+.header-tabs {
+  display: flex;
+  width: 100%;
+  height: calc(var(--header-height) / 2);
+  border-bottom: none;
+}
+
+.header-tab {
+  flex: 1;
+  border: none;
+  background-color: #f3f4f6;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #737373;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.header-tab.active {
+  background-color: #ffffff;
+  color: #171717;
+}
+
+/* FILA 2: Botones de Unidad (Alto = 20% del ancho de pantalla, o sea 1/5) */
+.unit-filters-group {
+  display: flex;
+  width: 100%;
+  height: calc(var(--header-height) / 2);
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 1vw;
+  box-sizing: border-box;
+  gap: 1vw;
+  background-color: #ffffff;
+  border: none;
+}
+
+/* Estilo del cuadrado individual */
+.unit-filter-btn {
+  width: 20%;
+  height: 100%;
+  border: none;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+/* ============================
+   DOCK INFERIOR (NUEVO DISEÑO)
+   ============================ */
+
+.dock-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(48px, 8vh, 72px);
+  background-color: #ffffff; /* Fondo blanco roto */
+  border-top: none; /* ELIMINADO: Borde gris superior */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.dock-stats-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #171717;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55%;   /* Espacio suficiente para el contador */
+  flex: 1;          /* Vuelve a 1 para no desplazar el centro */
+  min-width: 0;
+}
+
+.dock-center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;   /* No se estira, ocupa solo su contenido */
+}
+
+.dock-right-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  flex: 1;
+  flex-shrink: 0;   /* Evita que se encoja */
+}
+
+/* ============================
+   ÁREA PRINCIPAL (MARGENES DE SEGURIDAD)
+   ============================ */
+
+#app {
+  padding-top: calc(var(--header-height) + 0.5rem);
+  padding-bottom: clamp(56px, 8vh + 8px, 80px);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* ============================
+   PANTALLA DE LOGIN (Anula el padding y fondo de #app)
+   ============================ */
+
+#app.login-active {
+  padding: 0 !important;
+  background: transparent !important;
+}
