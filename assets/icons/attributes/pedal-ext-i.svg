@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Enganche superior -->
+  <path d="M 16 4.5 L 17.75 3.5" />
+
+  <!-- Tubo telescópico principal -->
+  <path d="M 16 4.5 L 11 18" />
+
+  <!-- Cojín / Pantorrillera (Completamente relleno) -->
+  <path d="M 14 7.5 L 11.8 13 C 11.2 13.7, 10 13.4, 9 12 L 10.8 6.3 C 11.5 5.6, 12.8 5.9, 14 7.5 Z" fill="currentColor" />
+
+  <!-- Plataforma reposapiés plana -->
+  <path d="M 11 18 L 8.5 17 L 4.5 18.2 L 7 19.2 Z" />
+
+  <!-- Badge I (Mismo estilo exacto que Badge XL) -->
+  <rect x="1" y="1.5" width="7" height="7" rx="1.5" fill="currentColor" stroke="none" />
+  <text x="3.4" y="6.7" font-family="Arial, sans-serif" font-size="5.5" font-weight="900" fill="#FFFFFF" stroke="none">I</text>
+</svg>

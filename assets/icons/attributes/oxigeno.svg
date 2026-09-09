@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Tulipa / Cesta de protección superior estilizada -->
+  <path d="M 8.5 2.5 L 10 7" />
+  <path d="M 15.5 2.5 L 14 7" />
+  <path d="M 8.5 2.5 h 7" />
+  
+  <!-- Grifo / Mando en el interior -->
+  <path d="M 12 3 v 2.5" />
+  <path d="M 10.5 4.2 h 3" />
+
+  <!-- Mitad superior del cuerpo (Cúpula estilizada) -->
+  <path d="M 10 7 L 9 9.5 v 4 h 6 v -4 L 14 7 Z" />
+
+  <!-- Mitad inferior del cuerpo (Estilizada, bloque sólido y base plana) -->
+  <path d="M 9 13.5 H 15 V 21.5 H 9 Z" fill="currentColor" />
+</svg>

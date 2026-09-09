@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Base de chasis horizontal -->
+  <path d="M 6 18.5 h 12" />
+  
+  <!-- Ruedas delantera y trasera -->
+  <circle cx="6" cy="20" r="1.5" />
+  <circle cx="18" cy="20" r="1.5" />
+
+  <!-- Mástil y brazo superior arqueado (Estructura principal) -->
+  <path d="M 7 18.5 C 7.5 12, 8 7.5, 12 5.5 C 13.5 4.5, 15.5 4, 17.5 4" />
+
+  <!-- Enganche vertical y Percha del arnés -->
+  <path d="M 17.5 4 v 4" />
+  <path d="M 14 10.5 C 15.5 9.5, 19.5 9.5, 21 10.5" />
+</svg>
